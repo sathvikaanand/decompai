@@ -5,9 +5,10 @@ client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
 # use client as usual
 # see https://platform.openai.com/docs/guides/text-generation?lang=python
 
+print(client.models.list())
 
 completion = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="oai-gpt-4o",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {
