@@ -6,7 +6,7 @@ from api_key import BASE_URL, API_KEY
 from openai import OpenAI
 
 # Change what prompt to import
-from gpt_prompt import gpt_prompt_better as gpt_prompt
+from gpt_prompts import gpt_prompt_better as gpt_prompt
 
 GHIDRA_OUTPUT_FILE = './output/ghidra_output.c'
 GPT_OUTPUT_FILE = './output/gpt_output.c'
