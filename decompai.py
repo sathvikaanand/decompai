@@ -4,16 +4,26 @@ import pyhidra
 from pyhidra.launcher import HeadlessPyhidraLauncher
 from api_key import BASE_URL, API_KEY
 from openai import OpenAI
+import os
 
 # Change what prompt to import
-from gpt_prompts import gpt_prompt_better as gpt_prompt
+from gpt_prompts import gpt_prompt_example as gpt_prompt
 
-GHIDRA_OUTPUT_FILE = './output/ghidra_output.c'
-GPT_OUTPUT_FILE = './output/gpt_output.c'
 
-def ghidra_decomp(input_file: str) -> bool:
+def generate_output_filename(input_file: str, output_dir: str, suffix: str) -> str:
+    """
+    Generate an output file path based on the input file name and suffix.
+    """
+    base_name = os.path.splitext(os.path.basename(input_file))[0]
+    return os.path.join(output_dir, f"{base_name}_{suffix}.c")
 
-    print(f'Running pyhidra on {input_file}')
+
+
+def ghidra_decomp(input_file: str, output_dir: str) -> bool:
+
+    ghidra_output_file = generate_output_filename(input_file, output_dir, "ghidra_output")
+
+    print(f'Running pyhidra on {input_file}, outputting to {ghidra_output_file}')
 
     status = False
     with pyhidra.open_program(input_file) as flat_api:
@@ -43,7 +53,7 @@ def ghidra_decomp(input_file: str) -> bool:
                 # print(pseudocode)
 
                 # Save pseudocode to a file
-                with open(GHIDRA_OUTPUT_FILE, "a") as output_file:
+                with open(ghidra_output_file, "a") as output_file:
                     output_file.write(pseudocode)
                 status = True
             else:
@@ -51,12 +61,16 @@ def ghidra_decomp(input_file: str) -> bool:
 
         # Cleanup
         decompiler.dispose()
-    return status
+    return status, ghidra_output_file
 
-def call_gpt(file_name: str, model='oai-gpt-4o-mini', n_choices=1) -> bool:
+def call_gpt(input_file: str, ghidra_output_file: str, output_dir: str, model='oai-gpt-4o-mini', n_choices=1) -> bool:
     
     text_input = ''
-    with open(GHIDRA_OUTPUT_FILE, 'r') as input_file:
+    gpt_output_file = generate_output_filename(input_file, output_dir, "gpt_output")
+
+    print(f"Connecting to GPT and saving output to {gpt_output_file}")
+
+    with open(ghidra_output_file, 'r') as input_file:
         text_input = input_file.read()
     print(text_input)
 
@@ -82,22 +96,31 @@ def call_gpt(file_name: str, model='oai-gpt-4o-mini', n_choices=1) -> bool:
     if response is None:
         print('call_gpt: gpt response is None', file=sys.stderr)
         return False
-    print(f'Saving gpt response to {GPT_OUTPUT_FILE}')
-    with open(GPT_OUTPUT_FILE, "w") as output_file:
+    print(f'Saving gpt response to {gpt_output_file}')
+    with open(gpt_output_file, "w") as output_file:
         output_file.write(response)
     return True
 
 
 def main():
-    status = ghidra_decomp(sys.argv[1])
-    if not status:
-        print("Failed ghidra processing")
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <input_file> <output_dir>")
         return
-    status = call_gpt(GHIDRA_OUTPUT_FILE)
+
+    input_file = sys.argv[1]
+    output_dir = sys.argv[2]
+    os.makedirs(output_dir, exist_ok=True)
+
+    status, ghidra_output_file = ghidra_decomp(input_file, output_dir)
     if not status:
-        print("Failed gpt processing")
+        print("Failed Ghidra processing")
         return
-    print("Finished decompiling and gpt processing")
+
+    if not call_gpt(input_file, ghidra_output_file, output_dir):
+        print("Failed GPT processing")
+        return
+
+    print("Finished decompiling and GPT processing")
 
 
 if __name__ == '__main__':

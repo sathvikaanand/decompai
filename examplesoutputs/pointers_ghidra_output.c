@@ -51,7 +51,7 @@ void processEntry entry(undefined8 param_1,undefined8 param_2)
   undefined auStack_8 [8];
   
   (*(code *)PTR___libc_start_main_00103fd8)
-            (FUN_0010121c,param_2,&stack0x00000008,0,0,param_1,auStack_8);
+            (FUN_001011dd,param_2,&stack0x00000008,0,0,param_1,auStack_8);
   do {
                     /* WARNING: Do nothing block with infinite loop */
   } while( true );
@@ -101,46 +101,34 @@ void _INIT_0(void)
 }
 
 
-void FUN_00101169(ulong param_1)
+void FUN_00101169(uint param_1,uint param_2)
 
 {
-  ulong uVar1;
-  int local_1c;
-  ulong local_18;
-  
-  local_18 = (param_1 ^ 0xdeadbeefcafebabe) * 0x1337;
-  for (local_1c = 0; local_1c < 5; local_1c = local_1c + 1) {
-    local_18 = local_18 ^ local_18 >> ((byte)local_1c + (char)param_1 & 7);
-    uVar1 = local_18 + 0xabcdef;
-    if (((long)(1 << ((byte)local_1c & 0x1f)) & uVar1) == 0) {
-      local_18 = local_18 + 0xdeadbeefcbaa88ad;
-    }
-    else {
-      local_18 = uVar1 ^ 0xdeadbeefcafebabe;
-    }
-  }
-  printf("Obfuscated result: %llx\n",local_18);
+  printf("Function A: %d + %d = %d\n",(ulong)param_1,(ulong)param_2,(ulong)(param_1 + param_2));
   return;
 }
 
 
-undefined8 FUN_0010121c(undefined8 param_1,undefined8 param_2)
+void FUN_001011a3(uint param_1,uint param_2)
 
 {
+  printf("Function B: %d * %d = %d\n",(ulong)param_1,(ulong)param_2,(ulong)(param_1 * param_2));
+  return;
+}
+
+
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
+
+undefined8 FUN_001011dd(void)
+
+{
+  long lVar1;
   long in_FS_OFFSET;
-  uint local_24;
-  ulong local_20;
-  char local_15 [5];
-  long local_10;
   
-  local_10 = *(long *)(in_FS_OFFSET + 0x28);
-  builtin_strncpy(local_15,"Z\x1f;,\x1d",5);
-  local_20 = 0;
-  for (local_24 = 0; local_24 < 5; local_24 = local_24 + 1) {
-    local_20 = (long)(int)(local_24 * 0x42 ^ (int)local_15[(int)local_24]) | local_20 << 8;
-  }
-  FUN_00101169(local_20,param_2,local_20);
-  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+  lVar1 = *(long *)(in_FS_OFFSET + 0x28);
+  FUN_00101169(10,5);
+  FUN_001011a3(10,5);
+  if (lVar1 != *(long *)(in_FS_OFFSET + 0x28)) {
                     /* WARNING: Subroutine does not return */
     __stack_chk_fail();
   }
