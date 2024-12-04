@@ -1,0 +1,17 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      4     71      2      10 func0@5-14@complicated_examples/paper_example.c
+      14      1    232      0      18 main@18-35@complicated_examples/paper_example.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     27      11.0     2.5      151.5         2     complicated_examples/paper_example.c
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        27      11.0     2.5      151.5        2            0      0.00    0.00

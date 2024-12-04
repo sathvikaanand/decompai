@@ -1,0 +1,35 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       7      2     31      0       8 _DT_INIT@2-9@examplesoutputs/tricky_ex_ghidra_output.c
+       5      1     19      0       6 FUN_00101020@12-17@examplesoutputs/tricky_ex_ghidra_output.c
+       5      1     19      0       6 FUN_00101050@20-25@examplesoutputs/tricky_ex_ghidra_output.c
+       5      1     19      0       6 __stack_chk_fail@28-33@examplesoutputs/tricky_ex_ghidra_output.c
+       6      1     29      1       8 printf@38-45@examplesoutputs/tricky_ex_ghidra_output.c
+       8      2     49      2      11 entry@48-58@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1      8      0       5 FUN_001010b0@64-68@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1      8      0       5 FUN_001010e0@74-78@examplesoutputs/tricky_ex_ghidra_output.c
+      12      3     43      0      13 _FINI_0@81-93@examplesoutputs/tricky_ex_ghidra_output.c
+       5      1     12      0       6 _INIT_0@96-101@examplesoutputs/tricky_ex_ghidra_output.c
+      19      3    122      1      21 FUN_00101169@104-124@examplesoutputs/tricky_ex_ghidra_output.c
+      19      3    135      2      22 FUN_0010121c@127-148@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1      8      0       5 _DT_FINI@151-155@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     10      0       6 __libc_start_main@160-165@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     10      0       6 _ITM_deregisterTMCloneTable@170-175@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     10      0       6 __stack_chk_fail@180-185@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     14      1       6 printf@191-196@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     10      0       6 __gmon_start__@201-206@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     10      0       6 _ITM_registerTMCloneTable@211-216@examplesoutputs/tricky_ex_ghidra_output.c
+       4      1     10      0       6 __cxa_finalize@221-226@examplesoutputs/tricky_ex_ghidra_output.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    131       6.5     1.4       28.8        20     examplesoutputs/tricky_ex_ghidra_output.c
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       131       6.5     1.4       28.8       20            0      0.00    0.00

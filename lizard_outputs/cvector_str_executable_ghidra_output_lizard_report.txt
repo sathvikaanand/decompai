@@ -1,0 +1,52 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      17      2    103      0      19 entry@2-20@examplesoutputs/cvector_str_executable_ghidra_output.c
+      19      3    108      1      22 _cvec_strdup@25-46@examplesoutputs/cvector_str_executable_ghidra_output.c
+      29      7    208      2      33 _cvec_str_heap@52-84@examplesoutputs/cvector_str_executable_ghidra_output.c
+      29      5    198      2      33 _cvec_init_str_heap@90-122@examplesoutputs/cvector_str_executable_ghidra_output.c
+      27      6    186      3      30 _cvec_str@127-156@examplesoutputs/cvector_str_executable_ghidra_output.c
+      27      4    176      3      30 _cvec_init_str@161-190@examplesoutputs/cvector_str_executable_ghidra_output.c
+       8      1     39      2       9 _cvec_copyc_str@193-201@examplesoutputs/cvector_str_executable_ghidra_output.c
+      18      3    167      2      21 _cvec_copy_str@206-226@examplesoutputs/cvector_str_executable_ghidra_output.c
+      20      3    148      2      23 _cvec_push_str@231-253@examplesoutputs/cvector_str_executable_ghidra_output.c
+      18      3    138      2      21 _cvec_pushm_str@258-278@examplesoutputs/cvector_str_executable_ghidra_output.c
+       9      2     78      2      10 _cvec_pop_str@281-290@examplesoutputs/cvector_str_executable_ghidra_output.c
+       4      1     24      1       5 _cvec_back_str@293-297@examplesoutputs/cvector_str_executable_ghidra_output.c
+      17      3    144      2      20 _cvec_extend_str@303-322@examplesoutputs/cvector_str_executable_ghidra_output.c
+      21      3    181      3      24 _cvec_insert_str@327-350@examplesoutputs/cvector_str_executable_ghidra_output.c
+      19      3    171      3      22 _cvec_insertm_str@355-376@examplesoutputs/cvector_str_executable_ghidra_output.c
+      24      4    219      4      27 _cvec_insert_array_str@382-408@examplesoutputs/cvector_str_executable_ghidra_output.c
+      19      3    181      4      22 _cvec_insert_arraym_str@414-435@examplesoutputs/cvector_str_executable_ghidra_output.c
+      11      2     91      4      13 _cvec_replace_str@438-450@examplesoutputs/cvector_str_executable_ghidra_output.c
+      11      2    113      3      13 _cvec_erase_str@453-465@examplesoutputs/cvector_str_executable_ghidra_output.c
+       7      1     75      3       8 _cvec_remove_str@468-475@examplesoutputs/cvector_str_executable_ghidra_output.c
+      13      3     89      2      16 _cvec_reserve_str@481-496@examplesoutputs/cvector_str_executable_ghidra_output.c
+      19      4    137      2      22 _cvec_set_cap_str@501-522@examplesoutputs/cvector_str_executable_ghidra_output.c
+      11      2     83      2      13 _cvec_set_val_sz_str@525-537@examplesoutputs/cvector_str_executable_ghidra_output.c
+      14      3    107      2      16 _cvec_set_val_cap_str@540-555@examplesoutputs/cvector_str_executable_ghidra_output.c
+       9      2     70      1      11 _cvec_clear_str@558-568@examplesoutputs/cvector_str_executable_ghidra_output.c
+      12      3     81      1      14 _cvec_free_str_heap@571-584@examplesoutputs/cvector_str_executable_ghidra_output.c
+      11      2     78      1      13 _cvec_free_str@587-599@examplesoutputs/cvector_str_executable_ghidra_output.c
+       5      1     32      4       8 ___assert_rtn@604-611@examplesoutputs/cvector_str_executable_ghidra_output.c
+       5      1     19      0       8 ___memmove_chk@614-621@examplesoutputs/cvector_str_executable_ghidra_output.c
+       5      1     19      0       8 ___memset_chk@624-631@examplesoutputs/cvector_str_executable_ghidra_output.c
+       5      1     19      0       8 ___strcpy_chk@634-641@examplesoutputs/cvector_str_executable_ghidra_output.c
+       5      1     21      1       8 _free@646-653@examplesoutputs/cvector_str_executable_ghidra_output.c
+       6      1     31      1      10 _malloc@658-667@examplesoutputs/cvector_str_executable_ghidra_output.c
+       6      1     38      3      10 _memset@672-681@examplesoutputs/cvector_str_executable_ghidra_output.c
+       6      1     29      1      10 _printf@686-695@examplesoutputs/cvector_str_executable_ghidra_output.c
+       6      1     35      2      10 _realloc@700-709@examplesoutputs/cvector_str_executable_ghidra_output.c
+       6      1     27      1      10 _strlen@714-723@examplesoutputs/cvector_str_executable_ghidra_output.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    498      13.5     2.4       99.0        37     examplesoutputs/cvector_str_executable_ghidra_output.c
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       498      13.5     2.4       99.0       37            0      0.00    0.00

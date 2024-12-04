@@ -1,0 +1,18 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       3      1     25      2       3 functionA@4-6@examplesoutputs/pointers_gpt_output.c
+       3      1     25      2       3 functionB@8-10@examplesoutputs/pointers_gpt_output.c
+       5      1     22      0       5 main@12-16@examplesoutputs/pointers_gpt_output.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     14       3.7     1.0       24.0         3     examplesoutputs/pointers_gpt_output.c
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        14       3.7     1.0       24.0        3            0      0.00    0.00

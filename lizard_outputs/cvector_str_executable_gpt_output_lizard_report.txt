@@ -1,0 +1,20 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       9      2     64      2       9 cvec_initialize@13-21@examplesoutputs/cvector_str_executable_gpt_output.c
+      16      4    121      2      16 cvec_push_str@23-38@examplesoutputs/cvector_str_executable_gpt_output.c
+       6      2     43      1       6 cvec_free@40-45@examplesoutputs/cvector_str_executable_gpt_output.c
+      11      2     79      0      14 entry@47-60@examplesoutputs/cvector_str_executable_gpt_output.c
+       4      1     13      0       4 main@62-65@examplesoutputs/cvector_str_executable_gpt_output.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     54       9.2     2.2       64.0         5     examplesoutputs/cvector_str_executable_gpt_output.c
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        54       9.2     2.2       64.0        5            0      0.00    0.00
