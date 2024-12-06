@@ -63,7 +63,7 @@ def ghidra_decomp(input_file: str, output_dir: str) -> bool:
         decompiler.dispose()
     return status, ghidra_output_file
 
-def call_gpt(input_file: str, ghidra_output_file: str, output_dir: str, model='oai-gpt-4o-mini', n_choices=1) -> bool:
+def call_gpt(input_file: str, ghidra_output_file: str, output_dir: str, model='oai-gpt-4o', n_choices=1) -> bool:
     
     text_input = ''
     gpt_output_file = generate_output_filename(input_file, output_dir, "gpt_output")
